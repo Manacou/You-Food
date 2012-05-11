@@ -19,4 +19,5 @@ public interface RestaurantDao {
     public List<Restaurant> getAllrestaurants();
     public Restaurant getRestaurantById(long id);
     public Restaurant updateRestaurant(Restaurant restaurant);
+    public void deleteRestaurant(Restaurant restaurant);
 }

@@ -15,5 +15,5 @@ public interface StatutDao {
     public Statut createStatut(Statut statut);
     public Statut getStatutById(long id);
     public Statut updateStatut(Statut statut);
-    public void deketeStatut(Statut statut);
+    public void deleteStatut(Statut statut);
 }

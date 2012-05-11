@@ -12,11 +12,11 @@ import javax.persistence.*;
  * @author Kevin
  */
 @Entity
-public class ListePlats implements Serializable {
+public class Article implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idListe;
+    private Long idArticle;
     
     @ManyToOne
     @JoinColumn(name="produit_fk")
@@ -25,11 +25,11 @@ public class ListePlats implements Serializable {
     private long idCommande; 
 
     public Long getId() {
-        return idListe;
+        return idArticle;
     }
 
     public void setId(Long id) {
-        this.idListe = id;
+        this.idArticle = id;
     }
 
     public long getIdCommande() {
@@ -40,12 +40,12 @@ public class ListePlats implements Serializable {
         this.idCommande = idCommande;
     }
 
-    public Long getIdListe() {
-        return idListe;
+    public Long getidArticle() {
+        return idArticle;
     }
 
-    public void setIdListe(Long idListe) {
-        this.idListe = idListe;
+    public void setidArticle(Long idArticle) {
+        this.idArticle = idArticle;
     }
 
     public Produit getProduit() {
@@ -59,18 +59,18 @@ public class ListePlats implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idListe != null ? idListe.hashCode() : 0);
+        hash += (idArticle != null ? idArticle.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ListePlats)) {
+        if (!(object instanceof Article)) {
             return false;
         }
-        ListePlats other = (ListePlats) object;
-        if ((this.idListe == null && other.idListe != null) || (this.idListe != null && !this.idListe.equals(other.idListe))) {
+        Article other = (Article) object;
+        if ((this.idArticle == null && other.idArticle != null) || (this.idArticle != null && !this.idArticle.equals(other.idArticle))) {
             return false;
         }
         return true;
@@ -78,7 +78,7 @@ public class ListePlats implements Serializable {
 
     @Override
     public String toString() {
-        return "fr.manacou.youfood.dao.ListePlats[ id=" + idListe + " ]";
+        return "fr.manacou.youfood.dao.ListePlats[ id=" + idArticle + " ]";
     }
     
 }

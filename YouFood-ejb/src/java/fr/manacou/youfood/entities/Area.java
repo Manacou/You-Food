@@ -5,6 +5,7 @@
 package fr.manacou.youfood.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -23,6 +24,12 @@ public class Area implements Serializable {
     private Restaurant restaurant;
     
     private int nbSeats;
+    
+    @OneToMany(mappedBy="idArea")
+    private List<Shift> shifts;
+    
+    @OneToMany(mappedBy="idArea")
+    private List<Table> tables;
 
     public Long getId() {
         return idArea;
@@ -46,6 +53,30 @@ public class Area implements Serializable {
 
     public void setNbSeats(int nbSeats) {
         this.nbSeats = nbSeats;
+    }
+
+    public Long getIdArea() {
+        return idArea;
+    }
+
+    public void setIdArea(Long idArea) {
+        this.idArea = idArea;
+    }
+
+    public List<Shift> getShifts() {
+        return shifts;
+    }
+
+    public void setShifts(List<Shift> shifts) {
+        this.shifts = shifts;
+    }
+
+    public List<fr.manacou.youfood.entities.Table> getTables() {
+        return tables;
+    }
+
+    public void setTables(List<fr.manacou.youfood.entities.Table> tables) {
+        this.tables = tables;
     }
     
     @Override

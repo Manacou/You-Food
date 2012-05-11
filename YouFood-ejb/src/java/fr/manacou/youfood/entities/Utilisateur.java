@@ -5,10 +5,8 @@
 package fr.manacou.youfood.entities;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.List;
+import javax.persistence.*;
 
 /**
  *
@@ -26,6 +24,9 @@ public class Utilisateur implements Serializable {
     private String firstName;
     private String lastName;
     private long status;
+    
+    @OneToMany(mappedBy="idUtilisateur")
+    private List<Shift> shifts;
 
     public Long getId() {
         return idUtilisateur;
@@ -80,6 +81,22 @@ public class Utilisateur implements Serializable {
 
     public void setStatus(long status) {
         this.status = status;
+    }
+
+    public Long getIdUtilisateur() {
+        return idUtilisateur;
+    }
+
+    public void setIdUtilisateur(Long idUtilisateur) {
+        this.idUtilisateur = idUtilisateur;
+    }
+
+    public List<Shift> getShifts() {
+        return shifts;
+    }
+
+    public void setShifts(List<Shift> shifts) {
+        this.shifts = shifts;
     }
 
     @Override

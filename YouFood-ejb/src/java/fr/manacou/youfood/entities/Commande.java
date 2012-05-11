@@ -5,10 +5,8 @@
 package fr.manacou.youfood.entities;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.List;
+import javax.persistence.*;
 
 /**
  *
@@ -22,6 +20,9 @@ public class Commande implements Serializable {
     private Long idCommande;
     
     private int status;
+    
+    @OneToMany(mappedBy="idArtcle")
+    private List<Article> articles;
 
     public Long getId() {
         return idCommande;
@@ -45,6 +46,14 @@ public class Commande implements Serializable {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
     }
 
     @Override
