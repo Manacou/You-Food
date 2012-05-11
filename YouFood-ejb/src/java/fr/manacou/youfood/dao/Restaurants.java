@@ -20,7 +20,6 @@ public class Restaurants implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    public
 
     public Long getId() {
         return id;
