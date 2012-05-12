@@ -43,7 +43,7 @@ public class ShiftDaoJpa implements ShiftDao{
     }
 
     @Override
-    public List<Shift> getAllShiftByUtilisateur(long idUtilisateur) {
+    public List<Shift> getAllShiftsByUtilisateur(long idUtilisateur) {
         
         return em.find(Utilisateur.class, idUtilisateur).getShifts();
     }
